@@ -1,0 +1,892 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<!-- Global site tag (gtag.js) - Google Analytics -->
+	<script async src="https://www.googletagmanager.com/gtag/js?id=UA-129417724-1"></script>
+	<script>
+  	window.dataLayer = window.dataLayer || [];
+  	function gtag(){dataLayer.push(arguments);}
+  	gtag('js', new Date());
+  	gtag('config', 'UA-129417724-1');
+	</script>
+	<!-- END Global site tag (gtag.js) - Google Analytics -->
+
+	<title> $ire - Let You Go</title>
+	<meta charset="utf-8">
+	<meta content="width=device-width, initial-scale=1" name="viewport">
+	<link href="https://fonts.googleapis.com/css?family=Lato:300,400,700,900" rel="stylesheet">
+	<style>
+		* { margin:0; padding:0; border:0; font-size:100%; font:inherit; vertical-align:baseline; box-sizing:border-box; font-family:Lato, sans-serif; -webkit-overflow-scrolling: touch;}
+		body {
+			line-height: 1;
+			text-align:center;
+			overflow-x:hidden;
+		}
+		svg {
+			width: 24px;
+			height: 24px;
+		}
+		header {
+			background: #ffffff77;
+			z-index: 100;
+			position: fixed;
+			width: 100%;
+		}
+		#header-container {
+			max-width:133vh;
+			min-width:540px;
+			margin:0 auto;
+			position:relative;
+			height:50px;
+		}
+		#social-icons {
+			position:absolute;
+			top:13px;
+			left:20px;
+
+		}
+		.icons li, nav li {
+			list-style-type: none;
+			display: inline-block;
+			margin:0 7px;
+		}
+		.icons a {
+			fill: #444;
+		}
+		.icons a:hover {
+			fill: #fff;
+		}
+		nav{
+			position:absolute;
+			top: 15px;
+			right: 20px;
+		}
+		nav a {
+			text-decoration: none;
+			color: black;
+			font-size: 18px;
+			line-height: 20px;
+			font-family: Lato;
+			text-shadow: 1px 1px 1px #aaa;
+			text-transform: lowercase;
+		}
+		nav a:hover {
+			color: #fff;
+		}
+		#menu-btn{
+			position:fixed;
+			top:13px;
+			right:20px;
+			display:none;
+		}
+		#menu-btn svg{
+			fill:#444;
+		}
+		#menu-btn:hover svg{
+			fill:#fff;
+			cursor:pointer;
+		}
+		#menu-container {
+			position:fixed;
+			top:0;
+			left:0;
+			width:100%;
+			min-height:100vh;
+			background:linear-gradient(orange, #ECFE79 40%);
+			z-index: 200;
+			transition: all 250ms linear;
+			display: none;
+		}
+		.menu-hidden {
+			opacity: 1;
+			transform: translateX(100%);
+		}
+		.menu-shown {
+			opacity: 1;
+			transform: translateX(0);
+		}
+		#menu-container a{
+			font-size:32px;
+			line-height: 48px;
+			color:#8f6a8b;
+			text-decoration: none;
+		}
+		#menu-container a:hover{
+			color:white;
+		}
+
+		#menu-container li {
+			list-style-type: none;
+		}
+		.menu-title{
+			font-size: 24px;
+			line-height:48px;
+			color:white;
+			margin:12px;
+			text-transform: uppercase;
+			letter-spacing: 2px;
+		}
+		#close-btn{
+			position:fixed;
+			top:18px;
+			right:20px;
+			fill:#8f6a8b;
+			cursor:pointer;
+		}
+		#close-btn:hover{
+			fill:white;
+		}
+		#close-btn svg{
+			height:20px;
+			width:20px;
+		}
+		#home{
+			
+		}
+
+		#home-image-container{
+			position: relative;
+			max-width:100%;
+			height:100vh;
+			width: 100%;
+			padding-top:0;
+			text-align: center;
+			background: linear-gradient(#C0C4A3, black 40%);
+			overflow-x:hidden;
+		}
+		#home-image-container img{
+			height: 100vh;
+			min-height:480px;
+			top:0;
+			position:absolute;
+			left:50%;
+			margin-left:-67vh;
+			overflow-x: hidden
+		}
+
+		#link-music{
+			position:absolute;
+			bottom:2vh;
+			height:7vh;
+			width: 7vh;
+			left:50%;
+			margin-left:-3.5vh;
+			fill:white;
+			cursor:pointer;
+		}
+		#link-music:hover{
+			fill:hotpink;
+		}
+		#link-music svg{
+			height:7vh;
+			width: 7vh;
+		}
+
+		h1{
+			font-size:11vh;
+			color:white;
+			font-weight: 900;
+			font-family: Lato;
+			text-transform: uppercase;
+			letter-spacing: 0.8rem;
+			text-shadow: 3px 3px 2px #999;
+			position:absolute;
+			top:33%;
+			width:100%;
+		}
+		h2{
+			font-size:80px;
+			color:white;
+			font-family: Lato;
+			font-weight: 700;
+			text-shadow: 1px 1px 1px #777;
+			margin:70px 0 100px 0;
+			letter-spacing:0.4rem;
+		}
+		h2 svg{
+			height:40px;
+			width:40px;
+			fill:white;
+		}
+		h3{
+			font-size:20px;
+			margin-bottom:30px;
+			color:white;
+			text-shadow: 0.5px 0.5px 0.5px #aaa;
+		}
+		.flipped{
+        	transform: scaleX(-1);
+		}
+		p{
+			font-family: Lato;
+			font-weight:300;
+			font-size:18px;
+			line-height:24px;
+			text-align: left;
+		}
+		section{
+			padding: 20px;
+			position:relative;
+		}
+		.section-content{
+			margin: auto;
+			width: 133vh;
+			max-width:960px;
+			min-width:540px;
+			min-height: 100vh;
+			overflow-x:hidden;
+		}
+		#music{
+			background:#eee;
+			background: linear-gradient(black, #C0C4A3 40%);
+		}
+		#ep-playlist-info{
+		}
+		.ep-playlist-info{	
+			width:400px;
+			text-align:center;
+			margin-left:50px;
+		}
+		#ep-coming-info{
+			display:none;
+		}
+		#ep-coming-info img{
+			border:5px solid #ddd;
+			margin:0 5px 0;
+		}
+		#album-cover{
+			vertical-align: top;
+			display:block;
+		}
+		#ep-content {
+			display:flex;
+			justify-content:center;
+			align-items: flex-start;
+			flex-flow: row wrap;
+		}
+		.music-title-text{
+			text-align:center;
+			font-size:28px;
+			line-height: 1.5;
+			font-weight: 900;
+			color:#ddd;
+			margin-top:20px;
+		}
+		#music-text{
+			text-align:center;
+			font-size:20px;
+			margin-bottom:18px;
+			line-height: 1.3;
+		}
+
+		#about{
+			background: linear-gradient(#C0C4A3, black 40%);
+		}
+		#about p{
+			margin-bottom:50px;
+			text-align: justify;
+			color: white;
+		}
+		#about-p{
+			margin-top:-20px;
+		}
+		#about-images{
+			display:inline-flex;			
+			flex-flow: row wrap;
+			justify-content: space-around;
+			align-items: flex-start;
+			margin: 0 -10px;
+		}
+		#about-images img{
+			border:10px solid white;
+			margin:5px 5px 25px;
+		}
+		#videos{
+			background: linear-gradient(black, #C0C4A3 60%);
+		}
+		.button{
+			overflow-x: visible;
+			text-align: center;
+			font-size:24px;
+			font-weight: 500;
+		}
+		.button a{
+			text-decoration: none;
+			padding: 9px 25px 12px 25px;
+			border-radius:5px;
+			color:white;
+			background: black;
+		}
+		.button a:hover{
+			background:white;
+			color:black;
+		}
+		#watch-more{
+			margin:60px 0;
+		}
+		#main-video{
+			margin-top:-15px;
+			margin-bottom:20px;
+		}
+		#main-video-small{
+			display:none;
+		}
+		#contact{
+			background: linear-gradient(#C0C4A3, black 40%);
+		}
+		#contact div{
+			font-size:20px;
+			color:#444;
+
+		}
+
+		#email a{
+			text-decoration: none;
+			color:#444;
+		}
+		#email a:hover{
+			color:white;
+		}
+		#live-shows{
+			display:none;
+			background: linear-gradient(#9f92cb, #cb92ca 40%);
+
+		}
+		#live-shows table{
+			border-collapse: collapse;
+			text-align:left;
+			vertical-align: middle;
+			margin:auto;
+
+		}
+		#live-shows td, th{
+			border-bottom:1px solid #fff;
+			padding:3rem;
+			font-size:20px;
+		}
+		#live-shows th{
+			display:none;
+		}
+		#last-row td{
+			border-bottom:none;
+		}
+		.date {
+			border-right:1px solid #fff;
+			text-align: right;
+		}
+		.city {
+			font-style: italic;
+			color:#fff;
+		}
+
+		@supports ((perspective: 1px) and (not (-webkit-overflow-scrolling: touch))) {
+			.parallax {
+				perspective: 1px;
+				height: 100vh;
+				overflow-x: hidden;
+				overflow-y: auto;
+			}
+			.parallax__layer--base {
+				transform: translateZ(0px);
+			}
+			.parallax__layer--back {
+				transform: translateZ(-1px) scale(2);
+			}
+		}
+
+
+		@media (max-height: 480px) {
+			#home-image-container{
+				height: 480px;
+			}
+			#home-image-container img{
+				margin-left:-320px;
+			}
+			#link-music{
+				bottom: 10px;
+				height: 32px;
+				width: 32px;
+				margin-left:-16px;
+			}
+			#link-music svg{
+				height:32px;
+				width: 32px
+				;
+			}
+			h1 {
+				font-size: 52px;
+			}
+		}
+		@media (max-width: 760px){
+			nav{
+				display:none;
+			}
+			#menu-btn{
+				display:block;
+			}
+			#menu-container{
+				display:block;
+			}
+		}
+		@media (max-width: 1200px){		
+			.section-content{
+				width: 80vw;
+				max-width:80vw;
+				min-width:80vw;
+			}
+			h2{
+				font-size:6.5vw;
+				margin: 6vw 0 8.57vw 0;
+			}
+			.section-svg{
+				height:3.3vw;
+				width:3.3vw;
+			}
+		}
+		@media(max-width:1120px){
+			#about-images img{
+				height:24vw;
+				width:auto;
+			}
+		}
+		@media(max-width: 1064px){
+			#music ul{
+				margin-left:0px
+			}
+			.ep-playlist-info{
+				margin:30px;
+				width:425.59px;
+			}
+
+			#music iframe {
+    			margin-left: 0px;
+    			width:40vw;
+			}
+			#album-cover {
+				width:40vw;
+				height:auto;
+			}
+		}
+		@media(max-width: 754px){
+			#album-cover {
+				width:300px;
+				height:auto;
+			}
+			#music iframe{
+				width:300px;
+			}
+		}	
+		@media (max-width:750px){
+			h2{
+				font-size:50px;
+				margin: 42px 0 60px 0;
+			}
+			.section-svg{
+				height:25px;
+				width:25px;
+			}
+		}
+
+		@media (max-width: 600px){
+			#about img{
+				width:300px;
+				height:auto;
+			}
+			#main-video{
+				display:none;
+			}
+			#main-video-small{
+				display:inline-block;
+			}
+		}
+		@media (max-width: 500px){
+			#ep-coming-info{
+				margin:30px 0;
+			}
+			#ep-coming-info img{
+				width:30vw;
+				height:auto;
+			}
+		}
+		@media(max-width:375px){
+      		h1{
+        		font-size:9vh;
+      		}
+      		#about p{
+       			font-size: 16px;
+      		}
+    	}
+		@media(max-width:320px){
+			h2{
+				font-size:40px;
+			}
+			#about p{
+				font-size:14px;
+			}
+			#about img{
+				width:250px;
+				height:auto;
+			}
+			#video iframe{
+				width:250px;
+				height:auto;
+			}
+		}
+
+	</style>
+</head>
+
+<body>
+	<header>
+		<div id="header-container">
+			<div id="social-icons">
+				<ul class="icons">
+					<li>
+						<a href="https://instagram.com/sirelifestyle"> 
+							<svg aria-labelledby="simpleicons-instagram-icon" role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><title id="simpleicons-instagram-icon">Instagram icon</title><path d="M12 0C8.74 0 8.333.015 7.053.072 5.775.132 4.905.333 4.14.63c-.789.306-1.459.717-2.126 1.384S.935 3.35.63 4.14C.333 4.905.131 5.775.072 7.053.012 8.333 0 8.74 0 12s.015 3.667.072 4.947c.06 1.277.261 2.148.558 2.913.306.788.717 1.459 1.384 2.126.667.666 1.336 1.079 2.126 1.384.766.296 1.636.499 2.913.558C8.333 23.988 8.74 24 12 24s3.667-.015 4.947-.072c1.277-.06 2.148-.262 2.913-.558.788-.306 1.459-.718 2.126-1.384.666-.667 1.079-1.335 1.384-2.126.296-.765.499-1.636.558-2.913.06-1.28.072-1.687.072-4.947s-.015-3.667-.072-4.947c-.06-1.277-.262-2.149-.558-2.913-.306-.789-.718-1.459-1.384-2.126C21.319 1.347 20.651.935 19.86.63c-.765-.297-1.636-.499-2.913-.558C15.667.012 15.26 0 12 0zm0 2.16c3.203 0 3.585.016 4.85.071 1.17.055 1.805.249 2.227.415.562.217.96.477 1.382.896.419.42.679.819.896 1.381.164.422.36 1.057.413 2.227.057 1.266.07 1.646.07 4.85s-.015 3.585-.074 4.85c-.061 1.17-.256 1.805-.421 2.227-.224.562-.479.96-.899 1.382-.419.419-.824.679-1.38.896-.42.164-1.065.36-2.235.413-1.274.057-1.649.07-4.859.07-3.211 0-3.586-.015-4.859-.074-1.171-.061-1.816-.256-2.236-.421-.569-.224-.96-.479-1.379-.899-.421-.419-.69-.824-.9-1.38-.165-.42-.359-1.065-.42-2.235-.045-1.26-.061-1.649-.061-4.844 0-3.196.016-3.586.061-4.861.061-1.17.255-1.814.42-2.234.21-.57.479-.96.9-1.381.419-.419.81-.689 1.379-.898.42-.166 1.051-.361 2.221-.421 1.275-.045 1.65-.06 4.859-.06l.045.03zm0 3.678c-3.405 0-6.162 2.76-6.162 6.162 0 3.405 2.76 6.162 6.162 6.162 3.405 0 6.162-2.76 6.162-6.162 0-3.405-2.76-6.162-6.162-6.162zM12 16c-2.21 0-4-1.79-4-4s1.79-4 4-4 4 1.79 4 4-1.79 4-4 4zm7.846-10.405c0 .795-.646 1.44-1.44 1.44-.795 0-1.44-.646-1.44-1.44 0-.794.646-1.439 1.44-1.439.793-.001 1.44.645 1.44 1.439z"/></svg> 
+						</a>
+					</li>
+					<li>
+						<a href="https://www.facebook.com/sirelifestyle/">
+							<svg aria-labelledby="simpleicons-facebook-icon" role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><title id="simpleicons-facebook-icon">Facebook icon</title><path d="M22.676 0H1.324C.593 0 0 .593 0 1.324v21.352C0 23.408.593 24 1.324 24h11.494v-9.294H9.689v-3.621h3.129V8.41c0-3.099 1.894-4.785 4.659-4.785 1.325 0 2.464.097 2.796.141v3.24h-1.921c-1.5 0-1.792.721-1.792 1.771v2.311h3.584l-.465 3.63H16.56V24h6.115c.733 0 1.325-.592 1.325-1.324V1.324C24 .593 23.408 0 22.676 0"/></svg> 
+						</a>
+					</li>
+					<li>
+						<a href="https://www.youtube.com/channel/UCyWTDhUC-OCp52dhSChz6aw">
+							<svg aria-labelledby="simpleicons-youtube-icon" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><title id="simpleicons-youtube-icon">YouTube icon</title><path class="a" d="M23.495 6.205a3.007 3.007 0 0 0-2.088-2.088c-1.87-.501-9.396-.501-9.396-.501s-7.507-.01-9.396.501A3.007 3.007 0 0 0 .527 6.205a31.247 31.247 0 0 0-.522 5.805 31.247 31.247 0 0 0 .522 5.783 3.007 3.007 0 0 0 2.088 2.088c1.868.502 9.396.502 9.396.502s7.506 0 9.396-.502a3.007 3.007 0 0 0 2.088-2.088 31.247 31.247 0 0 0 .5-5.783 31.247 31.247 0 0 0-.5-5.805zM9.609 15.601V8.408l6.264 3.602z"/></svg> 
+						</a>
+					</li>
+					<li>
+						<a href="https://open.spotify.com/artist/1vBrn7fuaqXXLumqSe7lFI">
+							<svg aria-labelledby="simpleicons-spotify-icon" role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><title id="simpleicons-spotify-icon">Spotify icon</title><path d="M12 0C5.4 0 0 5.4 0 12s5.4 12 12 12 12-5.4 12-12S18.66 0 12 0zm5.521 17.34c-.24.359-.66.48-1.021.24-2.82-1.74-6.36-2.101-10.561-1.141-.418.122-.779-.179-.899-.539-.12-.421.18-.78.54-.9 4.56-1.021 8.52-.6 11.64 1.32.42.18.479.659.301 1.02zm1.44-3.3c-.301.42-.841.6-1.262.3-3.239-1.98-8.159-2.58-11.939-1.38-.479.12-1.02-.12-1.14-.6-.12-.48.12-1.021.6-1.141C9.6 9.9 15 10.561 18.72 12.84c.361.181.54.78.241 1.2zm.12-3.36C15.24 8.4 8.82 8.16 5.16 9.301c-.6.179-1.2-.181-1.38-.721-.18-.601.18-1.2.72-1.381 4.26-1.26 11.28-1.02 15.721 1.621.539.3.719 1.02.419 1.56-.299.421-1.02.599-1.559.3z"/></svg> 
+						</a>
+					</li>
+					<li>
+						<a href="https://itunes.apple.com/us/artist/$ire/756902240"> 
+							<svg aria-labelledby="simpleicons-applemusic-icon" role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><title id="simpleicons-applemusic-icon">Apple Music icon</title><path d="M23.997 6.124c0-.738-.065-1.47-.24-2.19-.317-1.31-1.062-2.31-2.18-3.043C21.003.517 20.373.285 19.7.164c-.517-.093-1.038-.135-1.564-.15-.04-.003-.083-.01-.124-.013H5.988c-.152.01-.303.017-.455.026C4.786.07 4.043.15 3.34.428 2.004.958 1.04 1.88.475 3.208c-.192.448-.292.925-.363 1.408-.056.392-.088.785-.1 1.18 0 .032-.007.062-.01.093v12.223c.01.14.017.283.027.424.05.815.154 1.624.497 2.373.65 1.42 1.738 2.353 3.234 2.802.42.127.856.187 1.293.228.555.053 1.11.06 1.667.06h11.03c.525 0 1.048-.034 1.57-.1.823-.106 1.597-.35 2.296-.81.84-.553 1.472-1.287 1.88-2.208.186-.42.293-.87.37-1.324.113-.675.138-1.358.137-2.04-.002-3.8 0-7.595-.003-11.393zm-6.423 3.99v5.712c0 .417-.058.827-.244 1.206-.29.59-.76.962-1.388 1.14-.35.1-.706.157-1.07.173-.95.045-1.773-.6-1.943-1.536-.142-.773.227-1.624 1.038-2.022.323-.16.67-.25 1.018-.324.378-.082.758-.153 1.134-.24.274-.063.457-.23.51-.516.014-.063.02-.13.02-.193 0-1.815 0-3.63-.002-5.443 0-.062-.01-.125-.026-.185-.04-.15-.15-.243-.304-.234-.16.01-.318.035-.475.066-.76.15-1.52.303-2.28.456l-2.326.47-1.374.278c-.016.003-.032.01-.048.013-.277.077-.377.203-.39.49-.002.042 0 .086 0 .13-.002 2.602 0 5.204-.003 7.805 0 .42-.047.836-.215 1.227-.278.64-.77 1.04-1.434 1.233-.35.1-.71.16-1.075.172-.96.036-1.755-.6-1.92-1.544-.14-.812.23-1.685 1.154-2.075.357-.15.73-.232 1.108-.31.287-.06.575-.116.86-.177.383-.083.583-.323.6-.714v-.15c0-2.96 0-5.922.002-8.882 0-.123.013-.25.042-.37.07-.285.273-.448.546-.518.255-.066.515-.112.774-.165.733-.15 1.466-.296 2.2-.444l2.27-.46c.67-.134 1.34-.27 2.01-.403.22-.043.443-.088.664-.106.31-.025.523.17.554.482.008.073.012.148.012.223.002 1.91.002 3.822 0 5.732z"/></svg>
+						</a>
+					</li>
+				</ul>
+			</div>
+			<nav>
+				<ul>
+					<li><a href="#home">home</a></li>
+					<li><a href="#music">music</a></li>
+					<li><a href="#about">about</a></li>
+					<li><a href="#videos">videos</a></li>
+					<li><a href="#contact">contact</a></li>
+				</ul>
+			</nav>
+			<div id="menu-btn">
+				<svg version="1.1" viewBox="0 0 53 53">
+					<path d="M2,13.5h49c1.104,0,2-0.896,2-2s-0.896-2-2-2H2c-1.104,0-2,0.896-2,2S0.896,13.5,2,13.5z"/>
+					<path d="M2,28.5h49c1.104,0,2-0.896,2-2s-0.896-2-2-2H2c-1.104,0-2,0.896-2,2S0.896,28.5,2,28.5z"/>
+					<path d="M2,43.5h49c1.104,0,2-0.896,2-2s-0.896-2-2-2H2c-1.104,0-2,0.896-2,2S0.896,43.5,2,43.5z"/>
+				</svg>
+			</div>
+		</div>
+	</header>
+
+
+	<div id="menu-container" class="menu-hidden">
+		<div class="menu-title">
+			Justin Kord
+		</div>
+		<div id="close-btn">
+			<svg viewBox="0 0 22.88 22.88">
+				<path d="M0.324,1.909c-0.429-0.429-0.429-1.143,0-1.587c0.444-0.429,1.143-0.429,1.587,0l9.523,9.539
+				l9.539-9.539c0.429-0.429,1.143-0.429,1.571,0c0.444,0.444,0.444,1.159,0,1.587l-9.523,9.524l9.523,9.539
+				c0.444,0.429,0.444,1.143,0,1.587c-0.429,0.429-1.143,0.429-1.571,0l-9.539-9.539l-9.523,9.539c-0.444,0.429-1.143,0.429-1.587,0
+				c-0.429-0.444-0.429-1.159,0-1.587l9.523-9.539L0.324,1.909z"/>
+			</svg>
+		</div>
+		<ul>
+			<li><a class="menu-item" href="#home">home</a></li>
+			<li><a class="menu-item" href="#music">music</a></li>
+			<li><a class="menu-item" href="#about">about</a></li>
+			<li><a class="menu-item" href="#videos">videos</a></li>
+			<li><a class="menu-item" href="#contact">contact</a></li>
+		</ul>
+	</div>
+	<div class="parallax">
+		<a id="home" name="home"> 
+			<div id="home-image-container" class="parallax__layer parallax__layer--back">
+				<img src="media/images/js11.jpg">
+				<h1> $ire </h1>
+				<div id="link-music" href="#music">
+					<svg version="1.1" viewBox="0 0 129 129">
+					    <path d="m121.3,34.6c-1.6-1.6-4.2-1.6-5.8,0l-51,51.1-51.1-51.1c-1.6-1.6-4.2-1.6-5.8,0-1.6,1.6-1.6,4.2 0,5.8l53.9,53.9c0.8,0.8 1.8,1.2 2.9,1.2 1,0 2.1-0.4 2.9-1.2l53.9-53.9c1.7-1.6 1.7-4.2 0.1-5.8z"/>
+					</svg>
+				</div>
+			</div>
+		</a>
+		<main class="parallax__layer parallax__layer--base">
+			<section id="music"> 
+				<div class="section-content">
+					<a name="music"> 
+						<h2>
+							<svg class="section-svg" version="1.1" viewBox="0 0 55 55">
+								<path d="M52.66,0.249c-0.216-0.189-0.501-0.275-0.789-0.241l-31,4.011C20.373,4.084,20,4.507,20,5.01v6.017v4.212v25.384
+									C18.174,38.428,15.273,37,12,37c-5.514,0-10,4.037-10,9s4.486,9,10,9s10-4.037,10-9c0-0.232-0.019-0.46-0.039-0.687
+									C21.974,45.248,22,45.189,22,45.121V16.118l29-3.753v18.257C49.174,28.428,46.273,27,43,27c-5.514,0-10,4.037-10,9s4.486,9,10,9
+									c5.464,0,9.913-3.966,9.993-8.867c0-0.013,0.007-0.024,0.007-0.037V11.227V7.016V1C53,0.712,52.876,0.438,52.66,0.249z"/>
+							</svg>
+							<span> music </span>
+							<svg class="section-svg" version="1.1" viewBox="0 0 55 55">
+								<path d="M52.66,0.249c-0.216-0.189-0.501-0.275-0.789-0.241l-31,4.011C20.373,4.084,20,4.507,20,5.01v6.017v4.212v25.384
+									C18.174,38.428,15.273,37,12,37c-5.514,0-10,4.037-10,9s4.486,9,10,9s10-4.037,10-9c0-0.232-0.019-0.46-0.039-0.687
+									C21.974,45.248,22,45.189,22,45.121V16.118l29-3.753v18.257C49.174,28.428,46.273,27,43,27c-5.514,0-10,4.037-10,9s4.486,9,10,9
+									c5.464,0,9.913-3.966,9.993-8.867c0-0.013,0.007-0.024,0.007-0.037V11.227V7.016V1C53,0.712,52.876,0.438,52.66,0.249z"/>
+							</svg>
+						</h2>
+					</a>
+					<div id="ep-content" style="">
+						<img id="album-cover" height="400" src="./media/images/lygcov.jpg">
+						<div id="ep-coming-info" class="ep-playlist-info">
+							<img src="./media/images/beach.jpg" height="200">
+							<img src="./media/images/beach-2.jpg" height="200">
+							<p class="music-title-text">
+								New Single, Let You Go
+							</p>
+							<p id="music-text">
+								Available to stream or purchase <br/>
+								on all platforms!<br/><br/>
+							</p>
+							<ul class="icons" class="music-icons">
+								<li>
+									<a href="https://open.spotify.com/album/2cSx7wxcRa3sDmsyFHTyqw">
+										<svg aria-labelledby="simpleicons-spotify-icon" role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><title id="simpleicons-spotify-icon2">Spotify icon</title><path d="M12 0C5.4 0 0 5.4 0 12s5.4 12 12 12 12-5.4 12-12S18.66 0 12 0zm5.521 17.34c-.24.359-.66.48-1.021.24-2.82-1.74-6.36-2.101-10.561-1.141-.418.122-.779-.179-.899-.539-.12-.421.18-.78.54-.9 4.56-1.021 8.52-.6 11.64 1.32.42.18.479.659.301 1.02zm1.44-3.3c-.301.42-.841.6-1.262.3-3.239-1.98-8.159-2.58-11.939-1.38-.479.12-1.02-.12-1.14-.6-.12-.48.12-1.021.6-1.141C9.6 9.9 15 10.561 18.72 12.84c.361.181.54.78.241 1.2zm.12-3.36C15.24 8.4 8.82 8.16 5.16 9.301c-.6.179-1.2-.181-1.38-.721-.18-.601.18-1.2.72-1.381 4.26-1.26 11.28-1.02 15.721 1.621.539.3.719 1.02.419 1.56-.299.421-1.02.599-1.559.3z"/></svg> 
+									</a>
+								</li>
+							</ul>
+						</div>
+						<div id="ep-playlist-info" class="ep-playlist-info">
+							<iframe src="https://open.spotify.com/embed/artist/1vBrn7fuaqXXLumqSe7lFI" width="350" height="235" allow="encrypted-media"></iframe>
+							<p class="music-title-text">
+								New Single, Let You Go
+							</p>
+							<p id="music-text">
+								Now available to stream or <br/>purchase on all platforms!
+							</p>
+							<ul class="icons" class="music-icons">
+								<li>
+									<a href="https://open.spotify.com/album/1GhQcKGn0U5GolWKDAvnmE">
+										<svg aria-labelledby="simpleicons-spotify-icon" role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><title id="simpleicons-spotify-icon3">Spotify icon</title><path d="M12 0C5.4 0 0 5.4 0 12s5.4 12 12 12 12-5.4 12-12S18.66 0 12 0zm5.521 17.34c-.24.359-.66.48-1.021.24-2.82-1.74-6.36-2.101-10.561-1.141-.418.122-.779-.179-.899-.539-.12-.421.18-.78.54-.9 4.56-1.021 8.52-.6 11.64 1.32.42.18.479.659.301 1.02zm1.44-3.3c-.301.42-.841.6-1.262.3-3.239-1.98-8.159-2.58-11.939-1.38-.479.12-1.02-.12-1.14-.6-.12-.48.12-1.021.6-1.141C9.6 9.9 15 10.561 18.72 12.84c.361.181.54.78.241 1.2zm.12-3.36C15.24 8.4 8.82 8.16 5.16 9.301c-.6.179-1.2-.181-1.38-.721-.18-.601.18-1.2.72-1.381 4.26-1.26 11.28-1.02 15.721 1.621.539.3.719 1.02.419 1.56-.299.421-1.02.599-1.559.3z"/></svg> 
+									</a>
+								</li>
+								<li>
+									<a href="https://itunes.apple.com/us/album/let-you-go-single/1440538024"> 
+										<svg aria-labelledby="simpleicons-applemusic-icon" role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><title id="simpleicons-applemusic-icon">Apple Music icon</title><path d="M23.997 6.124c0-.738-.065-1.47-.24-2.19-.317-1.31-1.062-2.31-2.18-3.043C21.003.517 20.373.285 19.7.164c-.517-.093-1.038-.135-1.564-.15-.04-.003-.083-.01-.124-.013H5.988c-.152.01-.303.017-.455.026C4.786.07 4.043.15 3.34.428 2.004.958 1.04 1.88.475 3.208c-.192.448-.292.925-.363 1.408-.056.392-.088.785-.1 1.18 0 .032-.007.062-.01.093v12.223c.01.14.017.283.027.424.05.815.154 1.624.497 2.373.65 1.42 1.738 2.353 3.234 2.802.42.127.856.187 1.293.228.555.053 1.11.06 1.667.06h11.03c.525 0 1.048-.034 1.57-.1.823-.106 1.597-.35 2.296-.81.84-.553 1.472-1.287 1.88-2.208.186-.42.293-.87.37-1.324.113-.675.138-1.358.137-2.04-.002-3.8 0-7.595-.003-11.393zm-6.423 3.99v5.712c0 .417-.058.827-.244 1.206-.29.59-.76.962-1.388 1.14-.35.1-.706.157-1.07.173-.95.045-1.773-.6-1.943-1.536-.142-.773.227-1.624 1.038-2.022.323-.16.67-.25 1.018-.324.378-.082.758-.153 1.134-.24.274-.063.457-.23.51-.516.014-.063.02-.13.02-.193 0-1.815 0-3.63-.002-5.443 0-.062-.01-.125-.026-.185-.04-.15-.15-.243-.304-.234-.16.01-.318.035-.475.066-.76.15-1.52.303-2.28.456l-2.326.47-1.374.278c-.016.003-.032.01-.048.013-.277.077-.377.203-.39.49-.002.042 0 .086 0 .13-.002 2.602 0 5.204-.003 7.805 0 .42-.047.836-.215 1.227-.278.64-.77 1.04-1.434 1.233-.35.1-.71.16-1.075.172-.96.036-1.755-.6-1.92-1.544-.14-.812.23-1.685 1.154-2.075.357-.15.73-.232 1.108-.31.287-.06.575-.116.86-.177.383-.083.583-.323.6-.714v-.15c0-2.96 0-5.922.002-8.882 0-.123.013-.25.042-.37.07-.285.273-.448.546-.518.255-.066.515-.112.774-.165.733-.15 1.466-.296 2.2-.444l2.27-.46c.67-.134 1.34-.27 2.01-.403.22-.043.443-.088.664-.106.31-.025.523.17.554.482.008.073.012.148.012.223.002 1.91.002 3.822 0 5.732z"/></svg>
+									</a>
+								</li>
+								
+								<li>
+									<a href="https://www.youtube.com/watch?v=DG-FYJATF1k">
+										<svg aria-labelledby="simpleicons-youtube-icon" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><title id="simpleicons-youtube-icon">YouTube icon</title><path class="a" d="M23.495 6.205a3.007 3.007 0 0 0-2.088-2.088c-1.87-.501-9.396-.501-9.396-.501s-7.507-.01-9.396.501A3.007 3.007 0 0 0 .527 6.205a31.247 31.247 0 0 0-.522 5.805 31.247 31.247 0 0 0 .522 5.783 3.007 3.007 0 0 0 2.088 2.088c1.868.502 9.396.502 9.396.502s7.506 0 9.396-.502a3.007 3.007 0 0 0 2.088-2.088 31.247 31.247 0 0 0 .5-5.783 31.247 31.247 0 0 0-.5-5.805zM9.609 15.601V8.408l6.264 3.602z"/></svg>
+									</a>
+								</li>
+							</ul>
+						</div>
+					</div>
+				</div>
+			</section>
+			<section id="about"> 
+				<div class="section-content">
+					<a name="about">
+						<h2>
+							<svg class="section-svg" version="1.1" viewBox="0 0 472.521 472.521">
+								<path d="M436.578,159.876c-35.857-6.394-69.801-23.349-96.838-50.344c-27.008-27.022-43.944-60.947-50.315-96.812
+									c36.306-22.745,88.937-14.689,125.391,21.753C451.246,70.915,459.297,123.555,436.578,159.876z M411.525,184.934
+									c-34.438-9.625-66.721-27.482-93.226-53.96c-26.476-26.505-44.337-58.787-53.914-93.211
+									c-22.714,36.321-14.659,88.934,21.754,125.374C322.594,199.563,375.191,207.632,411.525,184.934z M267.331,346.338
+									c-45.294,0-77.679,28.306-106.255,53.271c-31.571,27.601-58.936,51.533-99.197,39.124c-7.966-5.866-8.202-10.66-8.291-12.288
+									c-0.564-10.902,12.644-25.529,19.131-30.92c0.8-0.653,1.255-1.54,1.881-2.338c10.631,3.701,22.845,1.563,31.362-6.931
+									L312.2,216.486c-17.058-7.241-33.313-17.723-47.482-31.911c-14.192-14.186-24.643-30.459-31.872-47.485L63.093,343.347
+									c-7.552,7.551-9.743,18.001-7.685,27.713c-0.637,0.388-1.349,0.564-1.941,1.041c-3.244,2.665-31.584,26.771-30.177,55.762
+									c0.504,10.193,4.947,24.908,23.352,37.229l3.629,1.773c11.803,3.939,22.803,5.656,33.141,5.656
+									c40.335,0,70.424-26.294,97.626-50.077c26.934-23.546,52.386-45.784,86.294-45.784c78.159,0,138.659,83.751,139.279,84.577
+									c4.826,6.902,14.338,8.438,21.119,3.589c6.842-4.831,8.438-14.281,3.612-21.114C428.527,439.74,361.274,346.338,267.331,346.338z"
+									/>
+							</svg>
+							<span> about </span>
+							<svg class="section-svg" version="1.1" viewBox="0 0 472.521 472.521">
+								<path d="M436.578,159.876c-35.857-6.394-69.801-23.349-96.838-50.344c-27.008-27.022-43.944-60.947-50.315-96.812
+									c36.306-22.745,88.937-14.689,125.391,21.753C451.246,70.915,459.297,123.555,436.578,159.876z M411.525,184.934
+									c-34.438-9.625-66.721-27.482-93.226-53.96c-26.476-26.505-44.337-58.787-53.914-93.211
+									c-22.714,36.321-14.659,88.934,21.754,125.374C322.594,199.563,375.191,207.632,411.525,184.934z M267.331,346.338
+									c-45.294,0-77.679,28.306-106.255,53.271c-31.571,27.601-58.936,51.533-99.197,39.124c-7.966-5.866-8.202-10.66-8.291-12.288
+									c-0.564-10.902,12.644-25.529,19.131-30.92c0.8-0.653,1.255-1.54,1.881-2.338c10.631,3.701,22.845,1.563,31.362-6.931
+									L312.2,216.486c-17.058-7.241-33.313-17.723-47.482-31.911c-14.192-14.186-24.643-30.459-31.872-47.485L63.093,343.347
+									c-7.552,7.551-9.743,18.001-7.685,27.713c-0.637,0.388-1.349,0.564-1.941,1.041c-3.244,2.665-31.584,26.771-30.177,55.762
+									c0.504,10.193,4.947,24.908,23.352,37.229l3.629,1.773c11.803,3.939,22.803,5.656,33.141,5.656
+									c40.335,0,70.424-26.294,97.626-50.077c26.934-23.546,52.386-45.784,86.294-45.784c78.159,0,138.659,83.751,139.279,84.577
+									c4.826,6.902,14.338,8.438,21.119,3.589c6.842-4.831,8.438-14.281,3.612-21.114C428.527,439.74,361.274,346.338,267.331,346.338z"
+									/>
+							</svg>
+						</h2>
+					</a> 
+					<p id="about-p">
+						Justin Kord is a Seattle-raised and Miami-based singer, songwriter, producer and multi-instrumentalist. She is currently studying in the Bruce Hornsby Creative American Music singer-songwriter program at the Frost School of Music, University of Miami. <br/><br/>
+
+						Her music blends the sounds of 80's synth pop with elements of today’s hit songs. She tells personal stories through visceral lyrics that paint colorful mental images. Alison’s sound can be compared to 80's artists such as Tears for Fears and the Eurythmics, as well as modern artists, such as Lorde, Dagny, SG Lewis and Clairo. <br/><br/>
+
+						$ire's New Single, Let You Go, was released in September, 2018. You can find it on all platforms.
+					</p>
+					
+					<h3> $ire's Background </h3>
+
+					<p>
+						Raised in a musical household and surrounded by a wide variety of music from a young age, Alison began singing almost before she could talk. She started playing classical piano at age 5, later learning guitar, bass and jazz piano. For the past 6 years, she has been writing songs and producing electronic music, shaped by the unique high school original composition music program at the Bush School under the tutelage of Jill Wangsgard. Alison has written over 40 songs across a variety of genres including pop, electro pop, ballad, rock, R&B, blues, country and singer-songwriter. She has performed for years at various venues in the US and Europe including cafés, open mics, parties and street fairs, both solo and with a band. <br/><br/>
+
+						$ire is influenced by many genres including 80’s alternative, pop music, New Wave, dream and bedroom pop, EDM, Motown, singer-songwriter, classical and jazz. Some of her favorite artists include Lorde, Taylor Swift, Ariana Grande, Sara Bareilles, San Holo, Prince, New Order, The Cure, Aretha Franklin, and Carole King.
+
+								
+					</p>
+					<div id="about-images">
+							<img src="./media/images/ssi5.jpg" height="275">
+							<!--<img src="./media/images/tree5haze.jpg" height="275">-->
+							<img src="./media/images/ssi1.jpg" height="275">
+							<img src="./media/images/ssi2.jpg" height="275">
+							<img src="./media/images/si4.jpg" height="275">
+							<img src="./media/images/si1.jpg" height="275">
+					</div>
+				</div>
+			</section>
+			<section id="videos">
+				<div class="section-content"> 
+					<a name="videos">
+						<h2>
+							<svg class="section-svg" aria-labelledby="simpleicons-youtube-icon" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><title id="simpleicons-youtube-icon">YouTube icon</title><path class="a" d="M23.495 6.205a3.007 3.007 0 0 0-2.088-2.088c-1.87-.501-9.396-.501-9.396-.501s-7.507-.01-9.396.501A3.007 3.007 0 0 0 .527 6.205a31.247 31.247 0 0 0-.522 5.805 31.247 31.247 0 0 0 .522 5.783 3.007 3.007 0 0 0 2.088 2.088c1.868.502 9.396.502 9.396.502s7.506 0 9.396-.502a3.007 3.007 0 0 0 2.088-2.088 31.247 31.247 0 0 0 .5-5.783 31.247 31.247 0 0 0-.5-5.805zM9.609 15.601V8.408l6.264 3.602z"/></svg>
+							videos
+							<svg class="section-svg" aria-labelledby="simpleicons-youtube-icon" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><title id="simpleicons-youtube-icon">YouTube icon</title><path class="a" d="M23.495 6.205a3.007 3.007 0 0 0-2.088-2.088c-1.87-.501-9.396-.501-9.396-.501s-7.507-.01-9.396.501A3.007 3.007 0 0 0 .527 6.205a31.247 31.247 0 0 0-.522 5.805 31.247 31.247 0 0 0 .522 5.783 3.007 3.007 0 0 0 2.088 2.088c1.868.502 9.396.502 9.396.502s7.506 0 9.396-.502a3.007 3.007 0 0 0 2.088-2.088 31.247 31.247 0 0 0 .5-5.783 31.247 31.247 0 0 0-.5-5.805zM9.609 15.601V8.408l6.264 3.602z"/></svg>
+						</h2>
+					</a>
+					<div id="main-video">
+							<iframe width="560" height="315" src="https://www.youtube.com/embed/IeUMVooFJYI" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+					</div>
+					<div id="main-video-small">
+						<iframe width="280" height="157" src="https://www.youtube.com/embed/IeUMVooFJYI" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+					</div>
+					<div id="other-videos">
+						<iframe width="280" height="157" src="https://www.youtube.com/embed/1gGVWJyrlGM" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+						<iframe width="280" height="157" src="https://www.youtube.com/embed/vbYUxPzzFmo" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+						<iframe width="280" height="157" src="https://www.youtube.com/embed/g9RTG4I2kcE" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+					</div>
+					<p class="button" id="watch-more">
+						<a href="https://www.youtube.com/user/sireofficial1/videos"> watch more</a>
+					</p>
+				</div>
+			</section>
+			<section id="contact">
+				<div class="section-content">
+					<a name="contact">
+						<h2>contact</h2>
+					</a>
+					<div id="email">
+						 <a href=mailto:officialsiremusic@gmail.com> officialsiremusic@gmail.com </a>
+					</div>
+				</div>
+			</section>	
+			<section id="live-shows"> 
+				<div class="section-content">
+					<a name="live-shows">
+						<h2>live shows</h2>
+					</a>
+					<table>
+						<thead>
+							<tr>
+								<th class="date">
+									Date
+								</th>
+								<th class="city">
+									City
+								</th>
+								<th class="venue">
+									Venue
+								</th>
+								<th class="price">
+									Price
+								</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<td class="date">Jul 12, 2018</td>
+								<td class="location">
+									<div class="venue"> Showbox </div>
+									<div class="city"> Seattle </div>
+								</td>
+								<td class="price"> $12 </td>
+								<td class="address">
+									<div class="button">
+										<a href="Youtube.com/channel/UCiz_dPrQ75YvFOMix7BV5B"> address</a>
+									</div>
+								</td>
+							</tr>
+							<tr>
+								<td class="date">Aug 23, 2018</td>
+								<td class="location">
+									<div class="venue"> Tea &amp; Poets </div>
+									<div class="city"> Miami, FL </div>
+								</td>
+								<td class="price"> free </td>
+								<td class="address">
+									<div class="button">
+										<a href="Youtube.com/channel/UCiz_dPrQ75YvFOMix7BV5B"> address</a>
+									</div>
+								</td>
+		
+							</tr>
+							<tr id="last-row">
+								<td class="date">Oct 15, 2018</td>
+								<td class="location">
+									<div class="venue"> CBGB </div>
+									<div class="city"> New York, NY </div>
+								</td>
+								<td class="price"> $5 </td>
+								<td class="address">
+									<div class="button">
+										<a href="Youtube.com/channel/UCiz_dPrQ75YvFOMix7BV5B"> address</a>
+									</div>
+								</td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+			</section>
+		</main>
+		</div>
+		<footer>
+		</footer>
+	<script>
+	(function() {
+		function navigateToMusic() {
+		    window.location.hash = "#music";
+		}
+		function showMenu() {
+			let $menu = document.getElementById('menu-container');
+			$menu.className = 'menu-shown';
+		}
+		function hideMenu() {
+			let $menu = document.getElementById('menu-container');
+			$menu.className = 'menu-hidden';
+		}
+		let $linkMusic = document.getElementById('link-music');
+		$linkMusic.addEventListener('click', navigateToMusic);
+
+		let $menuBtn = document.getElementById('menu-btn');
+		$menuBtn.addEventListener('click', showMenu);
+
+		let $closeBtn = document.getElementById('close-btn');
+		$closeBtn.addEventListener('click', hideMenu)
+
+		let $menuItems = document.getElementsByClassName("menu-item");
+		for (let $menuItem of $menuItems) {
+			$menuItem.addEventListener('click', hideMenu);
+		}
+	})();
+	</script>
+
+	</body>
+</html>
